@@ -1,0 +1,160 @@
+/* General Body and Font Styling */
+body {
+    background-color: #323E4F;
+    font-family: "Parkinsans", sans-serif !important;
+}
+
+/* Navbar Styling */
+.navbar {
+    font-family: "Parkinsans", sans-serif !important;
+}
+
+.navbar-nav .nav-item .nav-link {
+    color: #82F0F6 !important;  /* Light blue color for navbar links */
+}
+
+.navbar-nav .nav-item.active .nav-link {
+    color: #fff !important;  /* Make the active link white */
+}
+
+/* Navbar Background Color */
+.navbar-dark.bg-dark {
+    background-color: #212529 !important; /* Dark background for navbar */
+}
+
+/* Heading and Section Styling */
+h1, .fields {
+    font-size: 28px;
+    font-family: "Parkinsans", sans-serif !important;
+    color: #82F0F6;
+    text-align: left;
+    text-decoration: bold;
+}
+
+/* Sections in Content */
+.Section1 {
+    font-family: Arial;
+    color: #F2D736;
+}
+
+.Section2 {
+    font-size: 15px;
+    font-family: Calibri;
+    color: #FFFFFF;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.content {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* Footer Styling */
+.footer {
+    position: relative;
+    padding: 20px 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #090909;
+    color: white;
+    text-align: center;
+}
+
+/* Layout for Containers */
+.container {
+    margin-top: 50px;
+}
+
+.faq-section, .terms-section {
+    background-color: white;
+    border: 2px solid #ddd; /* Light border for box */
+    padding: 20px;
+    border-radius: 8px; /* Optional, adds rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional, adds shadow */
+}
+
+.faq-section h2, .terms-section h2 {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.faq-section h5, .terms-section h5 {
+    font-weight: bold;
+}
+
+/* Flexbox for positioning the FAQ and Terms sections side-by-side */
+.sections-container {
+    display: flex;
+    gap: 20px; /* Space between the boxes */
+    justify-content: space-between;
+}
+
+.faq-section, .terms-section {
+    flex: 1; /* Each box takes equal width */
+    min-height: 300px; /* Set a minimum height to maintain rectangular shape */
+}
+
+/* Responsive layout: stack the sections on smaller screens */
+@media (max-width: 768px) {
+    .sections-container {
+        flex-direction: column;
+    }
+
+    .faq-section, .terms-section {
+        min-height: auto; /* Allow flexibility for stacked sections */
+    }
+}
+
+/* Custom styling for form inputs */
+input, select, textarea {
+    color: white; /* Set text color to white */
+    background-color: #333; /* Optional: Set background to dark for contrast */
+}
+
+/* Optional: Style placeholder text (if any) to be white */
+::placeholder {
+    color: white;
+}
+
+/* Ensure labels in form fields are white */
+.form-group label {
+    color: white !important; /* Use !important to override any conflicting styles */
+    font-weight: bold;
+}
+
+/* Styling for Promotional Thumbnails (if you have any image grid) */
+.promotional-thumbnail {
+    width: 200px; /* Set width */
+    height: 300px; /* Set height */
+    object-fit: cover; /* Ensures the image covers the thumbnail area without distorting */
+    border-radius: 8px; /* Optional: add rounded corners */
+    margin: 10px; /* Optional: space between images */
+}
+
+/* Ensure good formatting for clearfix if using float-based layouts */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Additional Styling for Form and Input Fields */
+input, select, textarea {
+    border: 1px solid #fff;  /* Adds white border to the form fields */
+}
+
+/* Make sure all columns, text fields, etc., are cleared properly */
+.column {
+    float: left;
+    width: 25%;
+    padding: 5px;
+    text-align: center;
+}
+
+.column1 {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+    text-align: center;
+}
