@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Green Points Calculator App</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="includes/Cinema.css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- Start of the navigation section -->
+<div class="Section1">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <!-- Updated this line -->
+        <a class="navbar-brand" href="home.php">Green Points Calculator App</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <!-- Check the current page and add the 'active' class accordingly -->
+                <li class="nav-item <?php echo $current_page == 'dashboard.php' ? 'active' : ''; ?>">
+                    <a class="nav-link" href="dashboard.php">Dashboard <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item <?php echo $current_page == 'about.php' ? 'active' : ''; ?>">
+                    <a class="nav-link" href="about.php">About <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item <?php echo $current_page == 'contact.php' ? 'active' : ''; ?>">
+                    <a class="nav-link" href="contact.php">Contact & Help <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item <?php echo $current_page == 'user_account.php' ? 'active' : ''; ?>">
+                    <a class="nav-link" href="user_account.php">User Account <span class="sr-only">(current)</span></a>
+                </li>
+                <!-- Show this if user is not logged in -->
+                <li class="nav-item <?php echo $current_page == 'login.php' ? 'active' : ''; ?>">
+                    <a class="nav-link" href="login.php">Login <span class="sr-only">(current)</span></a>
+                </li>
+                <!-- Sign in page -->
+                <li class="nav-item <?php echo $current_page == 'sign_up.php' ? 'active' : ''; ?>">
+                    <a class="nav-link" href="sign_up.php">Sign Up <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+
+            <!-- Commented-out movie listings code starts here -->
+            <!-- 
+            <?php
+            // Open database connection
+            require('connect_db.php');
+            // Retrieve items from 'movie_listings' database table
+            $q = "SELECT * FROM movie_listings";
+            $r = mysqli_query($link, $q);
+
+            if (!$r) {
+                // Handle query error gracefully (without exposing sensitive info)
+                echo '<p>Error retrieving movie listings. Please try again later.</p>';
+                mysqli_close($link); // Close the database connection
+                include('includes/footer.php');
+                exit();
+            }
+
+            // Start HTML output for movies
+            if (mysqli_num_rows($r) > 0) {
+                // Loop through the movie listings and display them
+                while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
+                    echo '
+                    <div class="col-md-3 d-flex justify-content-center mb-4">
+                        <div class="card" style="width: 18rem;">
+                            <img src="' . $row['img'] . '" class="card-img-top" alt="Movie">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">' . $row['movie_title'] . '</h5>
+                                <p class="card-text">Genre: ' . $row['genre'] . '</p>
+                                <p class="card-text">Release Date: ' . $row['release'] . '</p>
+                                <p class="card-text">Age Rating: ' . $row['age_rating'] . '</p>
+                                <p class="card-text">Director: ' . $row['director'] . '</p>
+                                <p class="card-text"><a href="' . $row['preview'] . '" target="_blank">Watch Preview</a></p>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item btn btn-dark">
+                                    <a class="btn btn-dark btn-lg btn-block" href="Code/movie.php?movie_id=' . $row['movie_id'] . '">View Details</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>';
+                }
+            } else {
+                echo '<p>There are currently no movies in the table to display.</p>';
+            }
+
+            // Close the database connection
+            mysqli_close($link);
+            ?>
+            -->
+            <!-- Commented-out movie listings code ends here -->
+
+        </div>
+    </div>
+
+    <?php
+    // Include the footer
+    include('includes/footer.php');
+    ?>
+
+    <!-- Bootstrap JS and jQuery (placed at the end of the body for faster load) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
